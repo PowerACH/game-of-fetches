@@ -3,7 +3,7 @@ import React from 'react';
 import Axios from 'axios';
 
 
-export default class QuestionOne extends React.Component {
+export default class QuestionTwo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,9 +13,9 @@ export default class QuestionOne extends React.Component {
 
   
   componentDidMount() {
-    Axios.get("http://anapioficeandfire.com/api/characters/16")
+    Axios.get("http://www.anapioficeandfire.com/api/houses/378")
     .then(response => {
-      this.setState({ info: response.data.born });
+      this.setState({ info: response.data.region });
     })
     .catch(error => {
       console.log(error);
@@ -27,7 +27,7 @@ export default class QuestionOne extends React.Component {
     return (
 
       <div>
-        <h1>Where was Margaery Tyrell born? </h1>
+        <h1>What region is House Targaryen in? </h1>
         <h3> Answer : {info} </h3>
       </div>
     )
