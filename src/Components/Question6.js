@@ -11,15 +11,16 @@ export default class QuestionSix extends React.Component {
 
     componentDidMount() {
         Axios.get("http://www.anapioficeandfire.com/api/houses/362")
-        .then(response => {
-            this.setState({ get: response.data.founder})
-        })
-        .then(res => {
-            this.setState({ info: res.data.})
+        .then((response => {
+            return Axios.get(response.data.founder)
+        }))
+        .then((response) => {
+            console.log('Response', response)
+            this.setState({info: response.data.name})
         })
         .catch(error => {
             console.log(error);
-        });
+        })
     }
 
     render() {
