@@ -6,6 +6,7 @@ import QuestionThree from './Components/Question3'
 import QuestionFour from './Components/Question4'
 import QuestionFive from './Components/Question5'
 import QuestionSix from './Components/Question6'
+import QuestionSeven from './Components/Question7'
 import {
   BrowserRouter as Router,
   Switch,
@@ -37,6 +38,9 @@ export default function App() {
            <li>
              <Link to="/Question6">Question6</Link>
            </li>
+           <li>
+             <Link to="/Question7">Question7</Link>
+           </li>
           </ul>
         </nav>
 
@@ -61,6 +65,10 @@ export default function App() {
           </Route>
           <Route path="/Question6">
             <QuestionSix
+             />
+          </Route>
+          <Route path="/Question7">
+            <QuestionSeven
              />
           </Route>
         </Switch>
